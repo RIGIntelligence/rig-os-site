@@ -26,7 +26,14 @@
     "standard": "https://github.com/rodgemd1-lgtm/Startup-Intelligence-OS/blob/claude/rig-sovereign-audit-mesh/docs/repositories/repo-cli-standard.md"
   },
   "schema": "rig.repo-cli.v1",
-  "service_commands": [],
+  "service_commands": [
+    {
+      "name": "smoke",
+      "command": "make smoke",
+      "description": "Run the deterministic local smoke check (no network, no secrets).",
+      "deterministic": true
+    }
+  ],
   "slug": "rig-os-site",
   "source_of_truth": {
     "clone": "ssh://git@nas94f2ae.tail4d96b3.ts.net:2222/rig/rig-os-site.git",

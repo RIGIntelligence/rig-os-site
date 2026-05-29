@@ -1,0 +1,79 @@
+{
+  "schema": "rig.mcp.v1",
+  "name": "rig-os-site",
+  "version": "0.1.0",
+  "description": "MCP surface definition for the RIG OS public website. This file documents the intended tools, resources, and prompts for future MCP server implementation.",
+  "status": "design-only",
+  "implementation_note": "No MCP server is running. This manifest is a design artifact only. Real-time MCP server implementation requires a sealed DoneContract.",
+  "tools": [
+    {
+      "name": "list_pages",
+      "description": "List all HTML pages in the site.",
+      "input_schema": {},
+      "output": "Array of page paths relative to repo root.",
+      "auth_required": false,
+      "deterministic": true
+    },
+    {
+      "name": "get_page_content",
+      "description": "Retrieve the raw HTML content of a specific page.",
+      "input_schema": {
+        "page": "string - relative path to the HTML file (e.g. 'index.html', 'about.html')"
+      },
+      "output": "Raw HTML string.",
+      "auth_required": false,
+      "deterministic": true
+    },
+    {
+      "name": "check_site_health",
+      "description": "Run the deterministic smoke check and return pass/fail results.",
+      "input_schema": {},
+      "output": "Smoke check output from 'make smoke'.",
+      "auth_required": false,
+      "deterministic": true,
+      "local_command": "make smoke"
+    }
+  ],
+  "resources": [
+    {
+      "uri": "rig-os-site://pages",
+      "description": "All public HTML pages in the site.",
+      "access": "read",
+      "auth_required": false
+    },
+    {
+      "uri": "rig-os-site://cli/manifest.json",
+      "description": "CLI capability manifest (rig.repo-cli.v1).",
+      "access": "read",
+      "auth_required": false
+    },
+    {
+      "uri": "rig-os-site://mcp/manifest.json",
+      "description": "This MCP surface manifest.",
+      "access": "read",
+      "auth_required": false
+    }
+  ],
+  "prompts": [],
+  "auth": {
+    "required": false,
+    "notes": "All content is public. No secrets, tokens, or credentials needed for read operations."
+  },
+  "smoke_command": "make smoke",
+  "deferred": [
+    "Prompt templates deferred pending V10 content audit.",
+    "Live MCP server deferred pending sealed DoneContract.",
+    "Authentication model deferred (site is fully public).",
+    "Write/deploy tools intentionally excluded; require human approval."
+  ],
+  "boundaries": [
+    "No secrets, tokens, or private data may be exposed through any MCP tool.",
+    "No deploy, publish, or schedule actions are permitted without human approval.",
+    "No tool may read or write outside the repo working directory without explicit permission."
+  ],
+  "proof": {
+    "generated_at": "2026-05-29T13:48:42Z",
+    "generated_by": "copilot-agent/v10-design",
+    "status": "design-phase"
+  }
+}
