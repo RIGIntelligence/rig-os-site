@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Rodgers Intelligence Group</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/rig-monogram.png" type="image/png">
+  <meta name="description" content="RIG blog — AI operations, deterministic-before-agentic systems, and operator-grade intelligence from Mike Rodgers.">
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/index.html"><img src="/rig-monogram.png" alt="RIG" class="nav-logo"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/case-studies.html">Case Studies</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</div></nav>
+<main style="max-width:800px;margin:0 auto;padding:2rem 1rem">
+  <h1>RIG Blog</h1>
+  <p>AI operations, deterministic-before-agentic systems, and operator-grade intelligence.</p>
+  <div id="posts"></div>
+</main>
+<script>
+fetch('/blog/posts/index.json').then(r=>r.json()).then(posts=>{
+  const el=document.getElementById('posts');
+  posts.forEach(p=>{
+    el.innerHTML+=`<article style="margin-bottom:2rem;padding-bottom:1.5rem;border-bottom:1px solid #333"><h2><a href="/blog/posts/${p.slug}.html" style="color:#FFCD03;text-decoration:none">${p.title}</a></h2><p style="color:#888">${p.date||''}</p><p>${p.excerpt||''}</p></article>`;
+  });
+}).catch(()=>{document.getElementById('posts').innerHTML='<p>Posts coming soon.</p>';});
+</script>
+</body>
+</html>
