@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI for Law Firms: Research, Document Review, and Client Intake — Rodgers Intelligence Group</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/rig-monogram.png" type="image/png">
+  <meta name="description" content="How law firms use governed AI to accelerate legal research, streamline document review, and automate client intake — with deterministic citation verification and full audit trails.">
+  <meta name="keywords" content="AI for law firms, legal AI, legal research automation, document review AI, law firm client intake, deterministic AI, RIG">
+  <meta property="og:title" content="AI for Law Firms: Research, Document Review, and Client Intake">
+  <meta property="og:description" content="Accelerate legal research, streamline document review, and automate client intake — with deterministic citation verification and full audit trails.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://rodgersintelligence.com/blog/posts/ai-for-law-firms.html">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "AI for Law Firms: Research, Document Review, and Client Intake",
+    "author": {"@type": "Person", "name": "Mike Rodgers"},
+    "publisher": {"@type": "Organization", "name": "Rodgers Intelligence Group", "url": "https://rodgersintelligence.com"},
+    "datePublished": "2026-07-02",
+    "url": "https://rodgersintelligence.com/blog/posts/ai-for-law-firms.html"
+  }
+  </script>
+</head>
+<body>
+<nav class="nav"><div class="nav-inner">
+  <a href="/index.html"><img src="/rig-monogram.png" alt="RIG" class="nav-logo"></a>
+  <ul class="nav-links">
+    <li><a href="/index.html">Home</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/pricing.html">Pricing</a></li>
+    <li><a href="/blog/index.html">Blog</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+</div></nav>
+<main style="max-width:720px;margin:0 auto;padding:2rem 1rem">
+  <h1>AI for Law Firms: Research, Document Review, and Client Intake</h1>
+  <p style="color:#888">July 2, 2026 · Mike Rodgers</p>
+
+  <p><strong>Law firms have more to lose from AI hallucination than almost any other profession.</strong> A fabricated citation, a misstated holding, a case reference that doesn't exist — these aren't just errors. In the legal profession, they're sanctionable offenses. Lawyers have already been sanctioned, fined, and publicly reprimanded for filing briefs containing AI-generated fake citations.</p>
+
+  <p>So the legal profession has been rightly cautious. But caution without strategy is just delay. The firms that figure out how to deploy AI safely — with deterministic citation verification, governance gates, and proof records — will operate at a fraction of the cost and time of firms still doing everything by hand.</p>
+
+  <h2>The Fundamental Risk: LLMs Fabricate Citations</h2>
+  <p>Language models are text generators. When you ask them for a case citation, they produce text that looks like a citation. It has a case name, a reporter volume, a page number, a year. It looks real. And it often isn't.</p>
+
+  <p>This isn't a bug you can prompt-engineer away. It's a structural property of how language models work — they predict the next token based on patterns, not facts. They will generate plausible-sounding case names and citations that do not exist in any database.</p>
+
+  <p>The fix is not a better prompt. The fix is architectural: <strong>the LLM never generates citations. Citations are retrieved from a verified database and inserted by code.</strong></p>
+
+  <h2>The RIG Principle for Legal AI</h2>
+  <p>At Rodgers Intelligence Group, we build legal AI systems on the same principle we apply everywhere: <strong>code owns decisions, LLMs assist transformation, gates decide if it ships.</strong></p>
+
+  <p>For law firms, this translates to:</p>
+  <ol>
+    <li><strong>Citations come from a verified case law database.</strong> The engine queries Westlaw, Lexis, or your internal precedent database and retrieves actual cases with actual citations. The LLM references these. It cannot invent new ones.</li>
+    <li><strong>Document analysis is deterministic.</strong> The system extracts dates, parties, amounts, and clauses from contracts and pleadings using structured extraction — not a language model guessing at what a clause says.</li>
+    <li><strong>The LLM drafts the narrative.</strong> It writes the research memo, the motion draft, the client letter — from verified sources the engine has already retrieved.</li>
+    <li><strong>A governance gate checks every output.</strong> Does every citation in the document exist in the verified database? Are the holdings accurately summarized? Are the facts consistent with the source documents? The gate runs deterministic checks before anything ships.</li>
+    <li><strong>A ProofPacket seals the record.</strong> Full audit trail — what was retrieved, from where, what was generated, what was checked, who approved it, when.</li>
+  </ol>
+
+  <p><a href="/blog/posts/ai-strategy-deterministic-fix.html" style="color:#FFCD03">Read the deterministic fix article →</a></p>
+
+  <h2>Where AI Delivers in a Law Firm</h2>
+
+  <h3>1. Legal Research</h3>
+  <p>The traditional associate research workflow: read the question, search databases, pull cases, read cases, summarize holdings, identify the controlling precedent, write the memo. This takes 4-12 hours per research question.</p>
+
+  <p>The governed AI workflow: the attorney enters the legal question. The deterministic engine queries verified databases, retrieves relevant cases, and extracts the holdings, key facts, and procedural posture. The LLM drafts the research memo from these verified sources. The gate checks that every citation in the memo exists in the database and that the holdings are accurately represented. The attorney reviews and finalizes.</p>
+
+  <p>Time: 30-90 minutes instead of 4-12 hours. And the citations are verified before the attorney even sees the draft.</p>
+
+  <h3>2. Document Review and Due Diligence</h3>
+  <p>In M&A, real estate, and litigation discovery, document review is where firms spend enormous amounts of time. AI transforms this:</p>
+  <ul>
+    <li><strong>Contract review.</strong> The system extracts key clauses — indemnification, termination, change of control, assignment — from hundreds of contracts in minutes. Deterministic extraction, not LLM guessing. The LLM writes the summary memo from the extracted data.</li>
+    <li><strong>Due diligence.</strong> The engine flags missing documents, inconsistent terms, and unusual provisions across the data room. The attorney reviews flagged items, not every document.</li>
+    <li><strong>Discovery.</strong> The system categorizes documents by relevance, privilege, and topic. The LLM drafts privilege logs. The gate checks categorizations against the review protocol. Every document has a proof record.</li>
+  </ul>
+
+  <h3>3. Client Intake and Matter Management</h3>
+  <p>When a potential client contacts the firm, the clock starts. The firm that responds fastest, most professionally, and with the most relevant intake wins the client. AI automates the entire intake workflow:</p>
+  <ol>
+    <li><strong>Initial response.</strong> The system responds within minutes with a structured intake form tailored to the practice area — not a generic "we'll get back to you."</li>
+    <li><strong>Conflict check.</strong> The deterministic engine runs the conflict check against the firm's database before anyone spends time on the matter. No conflicts = proceed. Conflicts = flagged immediately.</li>
+    <li><strong>Engagement letter.</strong> The LLM drafts the engagement letter from the firm's templates, the matter details, and the fee structure. The gate checks that the fee terms match the firm's schedule.</li>
+    <li><strong>Matter setup.</strong> The system creates the matter in the practice management system, sets up the billing, and assigns the team per the firm's routing rules.</li>
+  </ol>
+
+  <p>What used to take 2-4 hours of partner and staff time now takes 15 minutes of review. <a href="/offers/process-automation-audit.html" style="color:#FFCD03">Explore our Process Automation Audit →</a></p>
+
+  <h3>4. Drafting and Filing</h3>
+  <p>The LLM drafts motions, briefs, and correspondence from verified research and the firm's templates. The gate checks citations, verifies the factual record against source documents, and flags any unsupported assertions. The attorney reviews, revises, and files. The system generates the proof record for every draft.</p>
+
+  <h2>What You Don't Do: Let AI Practice Law</h2>
+  <p>AI does not give legal advice. It does not make strategic decisions. It does not decide whether to settle, what to argue, or how to advise a client. Those decisions belong to the attorney — always.</p>
+
+  <p>What AI does is the mechanical work: research retrieval, document extraction, first-draft generation, citation verification, intake processing. The attorney's judgment, strategy, and client relationship remain entirely human. The AI makes the attorney faster, not replaceable.</p>
+
+  <h2>Compliance and Confidentiality</h2>
+  <p>Client data is processed within the firm's controlled environment, not sent to public AI tools. The LLM generates text from structured data that's already been extracted and verified — it doesn't have access to your client files or matter databases. Every action is logged in a ProofPacket with timestamp, source, and gate result.</p>
+
+  <p>For firms subject to specific jurisdictional rules on AI use (and an increasing number of bar associations are issuing guidance), the RIG approach — deterministic computation, verified citations, governance gates, and full audit trails — is the most defensible deployment model available. You can demonstrate exactly what the AI did, what it accessed, and what checks were performed.</p>
+
+  <h2>The Competitive Window</h2>
+  <p>Large firms are already deploying AI — they have the budget and the IT teams. Mid-size and small firms are the most exposed. They have high manual workloads, tight margins, and clients who expect faster turnaround at lower cost.</p>
+
+  <p>The firms that win will be the ones who deploy AI safely — with deterministic citations, gates before filing, and proof records for every action. The firms that lose will be the ones who either deploy recklessly and get sanctioned, or don't deploy at all and get outcompeted. <a href="/offers/fractional-operator.html" style="color:#FFCD03">Or have a Fractional Operator run the system →</a></p>
+
+  <h2>How to Start</h2>
+  <p>Don't start with AI drafting briefs. Start with the safest, highest-ROI automation: intake and conflict checks. Then expand to document review. Then research. Each step builds on the governance infrastructure — the gates, the verified databases, the proof records — established in the previous step.</p>
+
+  <p>RIG deploys governed AI operations for law firms in 30 days. Start with a <a href="/offers/process-automation-audit.html" style="color:#FFCD03">Process Automation Audit</a> that maps your practice's workflow and identifies the three automations with the highest ROI and lowest risk.</p>
+
+  <p><a href="/contact.html" style="color:#FFCD03">Book a call →</a></p>
+
+  <hr style="border-color:#333;margin:2rem 0">
+  <p style="color:#666;font-size:0.85rem">
+    <strong>Mike Rodgers</strong> is the founder of Rodgers Intelligence Group. He builds the systems, agents, and operating procedures that let a one-person company run like a fleet. <a href="/about.html" style="color:#FFCD03">Learn more →</a>
+  </p>
+</main>
+</body>
+</html>

@@ -1,5 +1,35 @@
 [
   {
+    "slug": "ai-for-law-firms",
+    "title": "AI for Law Firms: Research, Document Review, and Client Intake",
+    "date": "2026-07-02",
+    "excerpt": "How law firms use governed AI to accelerate legal research, streamline document review, and automate client intake — with deterministic citation verification and full audit trails."
+  },
+  {
+    "slug": "ai-for-cpa-firms",
+    "title": "AI for CPA Firms: Tax Prep, Audit Support, and Client Advisory",
+    "date": "2026-07-02",
+    "excerpt": "How CPA firms use governed AI to accelerate tax preparation, streamline audit support, and scale client advisory services — with deterministic accuracy and full audit trails."
+  },
+  {
+    "slug": "ai-for-dental-practices",
+    "title": "AI for Dental Practices: Patient Acquisition, Retention, and Operations",
+    "date": "2026-07-02",
+    "excerpt": "How dental practices use governed AI to acquire patients faster, reduce no-shows, automate recall campaigns, and run back-office operations without hallucination risk."
+  },
+  {
+    "slug": "ai-for-construction-firms",
+    "title": "AI for Construction Firms: Bidding, Estimating, and Operations",
+    "date": "2026-07-02",
+    "excerpt": "How construction firms use governed AI to win more bids, generate accurate estimates faster, and run job-site operations without hallucination risk."
+  },
+  {
+    "slug": "ai-strategy-local-businesses",
+    "title": "AI Strategy for Local Businesses: A Practical Playbook",
+    "date": "2026-07-02",
+    "excerpt": "What to automate first, how to avoid hallucination risk, and why deterministic gates matter before AI touches customer-facing work."
+  },
+  {
     "slug": "ai-strategy-deterministic-fix",
     "title": "Why Your AI Strategy Is Stuck (And the Deterministic Fix)",
     "date": "2026-07-01",
