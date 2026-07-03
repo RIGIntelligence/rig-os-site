@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RIG Intelligence Lab — Stop Learning AI. Start Operating It.</title>
+    <meta name="description" content="408 AI agents. 935 skills. 41 CLI tools. 15 MCP servers. One operating system. Rent live agents with ProofPackets.">
+    <style>
+        :root {
+            --bg: #0A0E27;
+            --bg2: #111538;
+            --accent: #00D9FF;
+            --accent2: #FFD700;
+            --text: #FFFFFF;
+            --text2: #A0A8C0;
+            --green: #00E676;
+            --red: #FF5252;
+            --card: #161B3D;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+        /* Nav */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 24px; max-width: 1200px; margin: 0 auto;
+        }
+        .logo { font-size: 24px; font-weight: 800; color: var(--accent); }
+        .logo span { color: var(--text2); font-weight: 400; }
+        .nav-links a { color: var(--text2); text-decoration: none; margin-left: 32px; font-size: 15px; }
+        .nav-links a:hover { color: var(--accent); }
+        .nav-cta {
+            background: var(--accent); color: var(--bg); padding: 10px 24px;
+            border-radius: 8px; text-decoration: none; font-weight: 700;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center; padding: 80px 24px 60px;
+            background: radial-gradient(ellipse at top, var(--bg2) 0%, var(--bg) 70%);
+        }
+        .hero h1 {
+            font-size: 52px; font-weight: 800; line-height: 1.1;
+            margin-bottom: 24px; letter-spacing: -1px;
+        }
+        .hero h1 .highlight { color: var(--accent); }
+        .hero h2 {
+            font-size: 22px; color: var(--text2); font-weight: 400;
+            max-width: 700px; margin: 0 auto 40px;
+        }
+        .hero-stats {
+            display: flex; justify-content: center; gap: 48px;
+            margin-bottom: 48px; flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-num { font-size: 36px; font-weight: 800; color: var(--accent); }
+        .stat-label { font-size: 14px; color: var(--text2); text-transform: uppercase; letter-spacing: 1px; }
+        .hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--accent); color: var(--bg); padding: 16px 40px;
+            border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 18px;
+            transition: transform 0.2s;
+        }
+        .btn-primary:hover { transform: scale(1.05); }
+        .btn-secondary {
+            background: transparent; color: var(--text); padding: 16px 40px;
+            border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 18px;
+            border: 2px solid var(--text2);
+        }
+        .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+        /* Wedge Section */
+        .wedge { padding: 80px 0; }
+        .wedge h2 {
+            font-size: 36px; text-align: center; margin-bottom: 16px; font-weight: 800;
+        }
+        .wedge-subtitle {
+            text-align: center; color: var(--text2); font-size: 18px;
+            margin-bottom: 56px; max-width: 600px; margin-left: auto; margin-right: auto;
+        }
+        .comparison {
+            display: grid; grid-template-columns: 1fr 1fr; gap: 24px;
+        }
+        .comparison-card {
+            background: var(--card); border-radius: 16px; padding: 40px;
+        }
+        .comparison-card.rig { border: 2px solid var(--accent); }
+        .comparison-card h3 {
+            font-size: 22px; margin-bottom: 24px; font-weight: 700;
+        }
+        .comparison-card.rig h3 { color: var(--accent); }
+        .comparison-card ul { list-style: none; }
+        .comparison-card li {
+            padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+            display: flex; align-items: center; gap: 12px;
+        }
+        .comparison-card li:last-child { border-bottom: none; }
+        .icon-x { color: var(--red); font-weight: bold; }
+        .icon-check { color: var(--green); font-weight: bold; }
+
+        /* Top 10 */
+        .top10 { padding: 80px 0; background: var(--bg2); }
+        .top10 h2 { font-size: 36px; text-align: center; margin-bottom: 56px; font-weight: 800; }
+        .top10-grid {
+            display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+        }
+        .top10-item {
+            background: var(--card); border-radius: 12px; padding: 32px;
+            transition: transform 0.2s;
+        }
+        .top10-item:hover { transform: translateY(-4px); }
+        .top10-num { font-size: 32px; font-weight: 800; color: var(--accent); margin-bottom: 8px; }
+        .top10-title { font-size: 18px; font-weight: 700; margin-bottom: 12px; }
+        .top10-desc { color: var(--text2); font-size: 15px; }
+
+        /* Pricing */
+        .pricing { padding: 80px 0; }
+        .pricing h2 { font-size: 36px; text-align: center; margin-bottom: 56px; font-weight: 800; }
+        .pricing-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+        }
+        .pricing-card {
+            background: var(--card); border-radius: 16px; padding: 40px;
+            text-align: center; position: relative;
+        }
+        .pricing-card.popular {
+            border: 2px solid var(--accent);
+            transform: scale(1.05);
+        }
+        .popular-badge {
+            position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+            background: var(--accent); color: var(--bg); padding: 4px 20px;
+            border-radius: 20px; font-size: 13px; font-weight: 700;
+        }
+        .pricing-tier { font-size: 14px; color: var(--text2); text-transform: uppercase; letter-spacing: 2px; }
+        .pricing-price { font-size: 48px; font-weight: 800; margin: 16px 0; }
+        .pricing-price span { font-size: 16px; color: var(--text2); font-weight: 400; }
+        .pricing-features { text-align: left; margin: 32px 0; }
+        .pricing-features li {
+            list-style: none; padding: 8px 0; display: flex; gap: 12px;
+            font-size: 15px; color: var(--text2);
+        }
+        .pricing-cta {
+            display: block; padding: 14px; border-radius: 10px;
+            text-decoration: none; font-weight: 700; font-size: 16px;
+            margin-top: 24px;
+        }
+        .pricing-cta.primary { background: var(--accent); color: var(--bg); }
+        .pricing-cta.secondary { background: transparent; color: var(--text); border: 1px solid var(--text2); }
+
+        /* Proof Section */
+        .proof { padding: 80px 0; background: var(--bg2); }
+        .proof h2 { font-size: 36px; text-align: center; margin-bottom: 56px; font-weight: 800; }
+        .proof-card {
+            background: var(--card); border-radius: 12px; padding: 32px;
+            font-family: 'Courier New', monospace; font-size: 14px;
+            overflow-x: auto; color: var(--green);
+        }
+        .proof-card .key { color: var(--accent); }
+        .proof-card .string { color: var(--accent2); }
+
+        /* CTA Section */
+        .final-cta { padding: 100px 0; text-align: center; }
+        .final-cta h2 { font-size: 42px; font-weight: 800; margin-bottom: 24px; }
+        .final-cta p { font-size: 20px; color: var(--text2); margin-bottom: 40px; }
+
+        /* Footer */
+        footer { padding: 40px 0; border-top: 1px solid rgba(255,255,255,0.1); }
+        footer .container {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 24px;
+        }
+        footer a { color: var(--text2); text-decoration: none; margin-left: 24px; font-size: 14px; }
+        footer a:hover { color: var(--accent); }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 32px; }
+            .comparison, .top10-grid, .pricing-grid { grid-template-columns: 1fr; }
+            .pricing-card.popular { transform: none; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">RIG <span>Intelligence Lab</span></div>
+    <div class="nav-links">
+        <a href="#wedge">Why RIG</a>
+        <a href="#top10">Top 10</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#proof">ProofPackets</a>
+        <a href="https://github.com/RIGIntelligence">GitHub</a>
+    </div>
+    <a href="#pricing" class="nav-cta">Join Free</a>
+</nav>
+
+<div class="hero">
+    <div class="container">
+        <h1>Stop Learning AI.<br><span class="highlight">Start Operating It.</span></h1>
+        <h2>408 AI agents. 935 skills. 41 CLI tools. 15 MCP servers. One operating system. Rent live agents with cryptographic ProofPackets.</h2>
+
+        <div class="hero-stats">
+            <div class="stat">
+                <div class="stat-num">408</div>
+                <div class="stat-label">AI Agents</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">935</div>
+                <div class="stat-label">Skills</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">588</div>
+                <div class="stat-label">Execution Cells</div>
+            </div>
+            <div class="stat">
+                <div class="stat-num">±30σ</div>
+                <div class="stat-label">Quality Gates</div>
+            </div>
+        </div>
+
+        <div class="hero-ctas">
+            <a href="#pricing" class="btn-primary">Join Free — Instant Access</a>
+            <a href="https://youtube.com" class="btn-secondary">Watch the Demo</a>
+        </div>
+    </div>
+</div>
+
+<div class="wedge" id="wedge">
+    <div class="container">
+        <h2>Everyone Else Teaches You to Fish.<br>RIG Gives You 408 Fishing Robots.</h2>
+        <p class="wedge-subtitle">Every AI community sells knowledge. RIG sells CAPABILITY.</p>
+
+        <div class="comparison">
+            <div class="comparison-card">
+                <h3>🔴 Everyone Else</h3>
+                <ul>
+                    <li><span class="icon-x">✗</span> Templates that decay</li>
+                    <li><span class="icon-x">✗</span> "Trust me" — no proof</li>
+                    <li><span class="icon-x">✗</span> Prompt-and-pray</li>
+                    <li><span class="icon-x">✗</span> Generic AI (no verticals)</li>
+                    <li><span class="icon-x">✗</span> Courses that go stale</li>
+                    <li><span class="icon-x">✗</span> Isolated tools</li>
+                    <li><span class="icon-x">✗</span> No quality gates</li>
+                    <li><span class="icon-x">✗</span> No agent rental</li>
+                </ul>
+            </div>
+            <div class="comparison-card rig">
+                <h3>🟢 RIG (1000x)</h3>
+                <ul>
+                    <li><span class="icon-check">✓</span> 408 live agents you RENT</li>
+                    <li><span class="icon-check">✓</span> ProofPackets — cryptographic proof</li>
+                    <li><span class="icon-check">✓</span> 3D Lattice — 588 execution cells</li>
+                    <li><span class="icon-check">✓</span> 8 vertical playbooks</li>
+                    <li><span class="icon-check">✓</span> 1000x Loop — daily improvement</li>
+                    <li><span class="icon-check">✓</span> Mesh — agents talk to each other</li>
+                    <li><span class="icon-check">✓</span> 40 Deviation Engines at ±30σ</li>
+                    <li><span class="icon-check">✓</span> Agent rental marketplace</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="top10" id="top10">
+    <div class="container">
+        <h2>10 Things You Get in RIG That Nobody Else Offers</h2>
+        <div class="top10-grid">
+            <div class="top10-item">
+                <div class="top10-num">01</div>
+                <div class="top10-title">🔑 The Agent Vault</div>
+                <div class="top10-desc">408 production-ready AI agents you can rent today. Not templates. LIVE AGENTS.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">02</div>
+                <div class="top10-title">📋 The Proof Engine</div>
+                <div class="top10-desc">Every agent action ships with a cryptographically-sealed ProofPacket. No proof, no ship.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">03</div>
+                <div class="top10-title">🎯 The 3D Lattice</div>
+                <div class="top10-desc">588 execution cells across 7 levels × 3 diamonds × 4 modes × 7 steps. Your operations run in a geometry, not vibes.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">04</div>
+                <div class="top10-title">⚡ 41 Battle-Tested CLI Tools</div>
+                <div class="top10-desc">From scraping pipelines to spend reduction engines. These run production RIG infrastructure.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">05</div>
+                <div class="top10-title">🧠 15 MCP Servers</div>
+                <div class="top10-desc">103+ tools across Cloudflare, GitHub, Stripe, Playwright, Consensus, and more. The new API layer.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">06</div>
+                <div class="top10-title">📊 40 Deviation Engines</div>
+                <div class="top10-desc">Physics→Cognitive→Nature→RIG-L→Detonation. Quality scoring that catches hallucinations before they ship.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">07</div>
+                <div class="top10-title">🏭 8 Vertical Playbooks</div>
+                <div class="top10-desc">Construction, dental, CPA, healthcare, manufacturing, legal, services, PE/CFO. Not generic AI.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">08</div>
+                <div class="top10-title">🔄 The 1000x Loop</div>
+                <div class="top10-desc">Every session leaves the system stronger. Continuous improvement isn't a buzzword — it's built in.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">09</div>
+                <div class="top10-title">🌐 The Mesh</div>
+                <div class="top10-desc">LAN-first agent coordination. Agents that talk to each other, not just to you.</div>
+            </div>
+            <div class="top10-item">
+                <div class="top10-num">10</div>
+                <div class="top10-title">🎓 The Operating System</div>
+                <div class="top10-desc">IQRSQPI, A1-A4, Gate-D, ProofPackets. You don't learn "AI tips" — you learn to OPERATE.</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="pricing" id="pricing">
+    <div class="container">
+        <h2>Choose Your Operating Level</h2>
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <div class="pricing-tier">FREE</div>
+                <div class="pricing-price">$0<span>/forever</span></div>
+                <ul class="pricing-features">
+                    <li><span class="icon-check">✓</span> 3 sample agent profiles</li>
+                    <li><span class="icon-check">✓</span> Weekly AI Operations Briefing</li>
+                    <li><span class="icon-check">✓</span> Community access</li>
+                    <li><span class="icon-check">✓</span> Module 1 (Foundations)</li>
+                    <li><span class="icon-check">✓</span> 10 starter n8n workflows</li>
+                    <li><span class="icon-check">✓</span> "The Deviation" essay feed</li>
+                </ul>
+                <a href="#" class="pricing-cta secondary">Join Free</a>
+            </div>
+            <div class="pricing-card popular">
+                <div class="popular-badge">MOST POPULAR</div>
+                <div class="pricing-tier">OPERATOR</div>
+                <div class="pricing-price">$97<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li><span class="icon-check">✓</span> Full 408-agent catalog</li>
+                    <li><span class="icon-check">✓</span> 50+ automation templates</li>
+                    <li><span class="icon-check">✓</span> All 10 classroom modules</li>
+                    <li><span class="icon-check">✓</span> $50/mo agent rental credits</li>
+                    <li><span class="icon-check">✓</span> 3 MCP servers + 10 CLI tools</li>
+                    <li><span class="icon-check">✓</span> All 8 vertical playbooks</li>
+                    <li><span class="icon-check">✓</span> Weekly live build sessions</li>
+                    <li><span class="icon-check">✓</span> ProofPacket templates</li>
+                </ul>
+                <a href="#" class="pricing-cta primary">Go Operator →</a>
+            </div>
+            <div class="pricing-card">
+                <div class="pricing-tier">COMMANDER</div>
+                <div class="pricing-price">$297<span>/month</span></div>
+                <ul class="pricing-features">
+                    <li><span class="icon-check">✓</span> Everything in Operator</li>
+                    <li><span class="icon-check">✓</span> $200/mo rental credits</li>
+                    <li><span class="icon-check">✓</span> Custom agent build (1/mo)</li>
+                    <li><span class="icon-check">✓</span> All 15 MCP servers (103+ tools)</li>
+                    <li><span class="icon-check">✓</span> All 41 CLI tools</li>
+                    <li><span class="icon-check">✓</span> 3D Lattice access</li>
+                    <li><span class="icon-check">✓</span> 40 Deviation Engines</li>
+                    <li><span class="icon-check">✓</span> Done-with-you sessions</li>
+                </ul>
+                <a href="#" class="pricing-cta secondary">Go Commander →</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="proof" id="proof">
+    <div class="container">
+        <h2>What's a ProofPacket?</h2>
+        <p style="text-align: center; color: var(--text2); margin-bottom: 40px; font-size: 18px;">
+            Every RIG agent action ships with cryptographic proof. This is what "no proof, no ship" looks like:
+        </p>
+        <div class="proof-card">
+{
+  <span class="key">"schema_version"</span>: 1,
+  <span class="key">"run_id"</span>: <span class="string">"a3f7b2c1-..."</span>,
+  <span class="key">"agent"</span>: <span class="string">"agency-lead-scorer"</span>,
+  <span class="key">"artifact"</span>: {
+    <span class="key">"type"</span>: <span class="string">"json"</span>,
+    <span class="key">"hash"</span>: <span class="string">"sha256:8f2a..."</span>,
+    <span class="key">"bytes"</span>: 12453
+  },
+  <span class="key">"sources"</span>: [
+    {<span class="key">"uri"</span>: <span class="string">"https://api.apify.com/..."</span>, <span class="key">"hash"</span>: <span class="string">"sha256:1b3c..."</span>}
+  ],
+  <span class="key">"gates"</span>: [
+    {<span class="key">"name"</span>: <span class="string">"AntiGenericForce"</span>, <span class="key">"score"</span>: 87, <span class="key">"threshold"</span>: 85, <span class="key">"status"</span>: <span class="string">"PASS"</span>},
+    {<span class="key">"name"</span>: <span class="string">"SourcePerClaim"</span>, <span class="key">"claims"</span>: 12, <span class="key">"sources"</span>: 12, <span class="key">"status"</span>: <span class="string">"PASS"</span>},
+    {<span class="key">"name"</span>: <span class="string">"PhysicsCheck"</span>, <span class="key">"breaches"</span>: 0, <span class="key">"status"</span>: <span class="string">"PASS"</span>}
+  ],
+  <span class="key">"deviation"</span>: {
+    <span class="key">"rig_l"</span>: 0.82,
+    <span class="key">"anti_generic"</span>: 87,
+    <span class="key">"physics_breaches"</span>: []
+  },
+  <span class="key">"verdict"</span>: <span class="string">"done = all(gates_pass) = TRUE"</span>,
+  <span class="key">"proof_hash"</span>: <span class="string">"sha256:e9d4..."</span>
+}
+        </div>
+    </div>
+</div>
+
+<div class="final-cta">
+    <div class="container">
+        <h2>Stop Learning AI. Start Operating It.</h2>
+        <p>Join 200+ operators who rent AI agents, not courses.</p>
+        <a href="#" class="btn-primary">Join RIG Intelligence Lab — Free</a>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div class="logo">RIG <span>Intelligence Lab</span></div>
+        <div>
+            <a href="https://github.com/RIGIntelligence">GitHub</a>
+            <a href="#">Skool</a>
+            <a href="#">YouTube</a>
+            <a href="mailto:mike@rodgersintelligence.com">Contact</a>
+            <a href="#proof">ProofPackets</a>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
